@@ -26,8 +26,12 @@ ruzstd.workspace = true
 [lib]
 bench = false
 
-[dev-dependencies]
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
 criterion.workspace = true
+
+# rayon and plotters do not build for WASI.
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+criterion = { version = "0.5", default-features = false }
 
 [[bench]]
 name = "codec"
@@ -35,6 +39,10 @@ harness = false
 
 [[bench]]
 name = "compressor"
+harness = false
+
+[[bench]]
+name = "zstd"
 harness = false
 
 [lints]
