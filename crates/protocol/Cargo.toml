@@ -16,12 +16,7 @@ serde.workspace = true
 thiserror.workspace = true
 brotli.workspace = true
 lz4_flex.workspace = true
-
-[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-zstd = { workspace = true, features = ["default"] }
-
-[target.'cfg(target_arch = "wasm32")'.dependencies]
-ruzstd.workspace = true
+zrip.workspace = true
 
 [lib]
 bench = false
