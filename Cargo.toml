@@ -70,7 +70,7 @@ lasso = { version = "0.7", features = ["multi-threaded"] }
 rust-embed = "8"
 brotli = "8"
 lz4_flex = "0.13"
-zrip = { version = "0.8", default-features = false, features = ["std", "simd"] }
+zrip = { version = "0.8.18", default-features = false, features = ["std", "simd"] }
 eframe = { version = "0.33", default-features = false, features = ["default_fonts", "glow", "x11", "wayland"] }
 egui = "0.33"
 egui_plot = "0.34"
